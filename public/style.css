@@ -1,14 +1,14 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lato:wght@300;400;700&display=swap");
 :root {
   --color-primary: #F9F9F1;
   --color-primary-alt: #341EA0;
   --color-secondary: #A63A94;
   --color-background: #130363;
-  --color-text: #bcbc9b;
+  --color-text: #dadac7;
   --color-light: #fff;
-  --color-anchor: #F9F9F1;
-  --font-family: "Baloo 2", sans-serif;
+  --color-anchor: #A63A94;
+  --font-family: "Lato", sans-serif;
   --font-weight-strong: 500;
   --font-size-h1: 6rem;
   --font-size-h2: 3rem;
@@ -16,6 +16,10 @@
   --font-size-h4: 1.35rem;
   --font-size-text: 1.15rem;
   --border-radius: 8px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bruno Ace", cursive;
 }
 
 /*
@@ -251,9 +255,6 @@ header {
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
   color: var(--color-primary);
   text-align: center;
 }
@@ -261,8 +262,6 @@ header h1 {
   display: inline-grid;
   min-height: var(--logomark-height);
   padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
   place-content: center;
 }
 header h2 {
@@ -442,7 +441,6 @@ nav ul li {
 #files .container {
   display: inline-block;
   padding: 5vmin;
-  outline: 4px dashed var(--color-secondary);
   background-color: var(--color-background);
   text-align: center;
 }
@@ -513,7 +511,7 @@ nav ul li {
 }
 @media (min-width: 515px) and (max-width: 765px) {
   #styles .features li:nth-last-child(1):nth-child(odd),
-  .features.patterned li:nth-last-child(1):nth-child(odd) {
+.features.patterned li:nth-last-child(1):nth-child(odd) {
     grid-column: span 2;
   }
 }
@@ -625,8 +623,6 @@ nav ul li {
   display: inline-grid;
   min-height: var(--logomark-height);
   padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
   place-content: center;
   position: absolute;
   left: 50%;
@@ -745,5 +741,3 @@ nav ul li {
   margin-right: 0.25em;
   fill: currentColor;
 }
-
-/*# sourceMappingURL=style.css.map */
