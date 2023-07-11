@@ -1,7 +1,7 @@
-$color-primary: #F9F9F1 !default;
-$color-primary-alt: #341EA0 !default;
-$color-secondary: #A63A94 !default;
-$color-background: #130363 !default;
+$color-primary: #dbdcf9 !default;
+$color-primary-alt: #5a396f !default;
+$color-secondary: #a63a94 !default;
+$color-background: #0f1e4f !default;
 
 $brand-colors: (
   primary: $color-primary,
@@ -68,6 +68,11 @@ $font-sizes: (
   --border-radius: #{$border-radius};
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bruno Ace', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bruno Ace", cursive;
 }
