@@ -273,8 +273,37 @@ header h2 {
   max-width: 30ch;
 }
 
-nav {
-  background: #4d4d4d;
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul a {
+  display: inline-grid;
+  padding: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+nav ul a::after {
+  width: 100%;
+  height: 0.33em;
+  background-color: var(--color-secondary);
+  content: "";
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+nav ul a:hover::after, nav ul a:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 nav ul {
@@ -328,16 +357,17 @@ nav ul a {
   text-decoration: none;
 }
 
-  content: "";
+nav ul a::after {
   width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  height: 0.33em;
+  background-color: var(--color-text);
+  opacity: 0.15;
+  content: "";
 }
 
+nav ul a:hover::after,
+nav ul a:focus::after {
+  opacity: 1;
 }
 
 nav ul li {
@@ -395,7 +425,7 @@ nav ul li {
   transform: rotate(-8deg) translateX(-10%);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
 }
-@supports (background-clip: text) or (-webkit-background-clip: text) {
+@supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
   #guidelines h3 {
     -webkit-background-clip: text;
     background-clip: text;
@@ -407,7 +437,7 @@ nav ul li {
     transform: rotate(-8deg) translateX(-30%);
   }
 }
-@supports (background-clip: text) or (-webkit-background-clip: text) {
+@supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
   #guidelines p:nth-of-type(2) {
     position: relative;
   }
@@ -775,6 +805,4 @@ nav ul li {
   height: 1em;
   margin-right: 0.25em;
   fill: currentColor;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
