@@ -273,6 +273,10 @@ header h2 {
   max-width: 30ch;
 }
 
+nav {
+  background: #4d4d4d;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -281,17 +285,49 @@ nav ul {
   padding: 0;
   list-style: none;
 }
+nav ul::before, nav ul::after {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
+  margin-top: 5px;
+  animation: flash 5s infinite;
+}
+
+@keyframes flash {
+  5% {
+    background-color: green;
+  }
+  10% {
+    background-color: red;
+  }
+  20% {
+    background-color: yellow;
+  }
+  25% {
+    background-color: red;
+  }
+  35% {
+    background-color: green;
+  }
+  80% {
+    background-color: 0;
+  }
+  90% {
+    background-color: red;
+  }
+}
 nav ul a {
   display: inline-grid;
   padding: 0.5rem;
-  color: var(--color-secondary);
+  color: var(--color-text);
   font-size: 1.25rem;
+  font-family: Bruno Ace;
   text-decoration: none;
 }
-nav ul a::after {
-  width: 100%;
-  height: 0.33em;
-  background-color: var(--color-secondary);
+
   content: "";
   width: 100%;
   transform: scaleX(0);
@@ -301,10 +337,9 @@ nav ul a::after {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-nav ul a:hover::after, nav ul a:focus::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+
 }
+
 nav ul li {
   margin: 0.25rem;
 }
@@ -360,7 +395,7 @@ nav ul li {
   transform: rotate(-8deg) translateX(-10%);
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
 }
-@supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
+@supports (background-clip: text) or (-webkit-background-clip: text) {
   #guidelines h3 {
     -webkit-background-clip: text;
     background-clip: text;
@@ -372,7 +407,7 @@ nav ul li {
     transform: rotate(-8deg) translateX(-30%);
   }
 }
-@supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
+@supports (background-clip: text) or (-webkit-background-clip: text) {
   #guidelines p:nth-of-type(2) {
     position: relative;
   }
@@ -740,4 +775,6 @@ nav ul li {
   height: 1em;
   margin-right: 0.25em;
   fill: currentColor;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
