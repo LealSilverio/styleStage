@@ -263,14 +263,6 @@ header {
   background-image: url("../assets/backgroundimg.jpg");
   text-align: center;
 }
-header::after {
-  height: 200px;
-  width: 200px;
-  content: "";
-  background: url(../assets/astronaut.png);
-  transform: rotate(20deg);
-  animation: float 5s infinite;
-}
 header h1 {
   display: inline-grid;
   min-height: var(--logomark-height);
@@ -280,33 +272,32 @@ header h1 {
 header h2 {
   max-width: 30ch;
 }
-
-@keyframes float {
-  5% {
-    transform: translateX(20px) rotate(20deg);
-  }
-  10% {
-    transform: translateX(25px) translateY(5px) rotate(25deg);
-  }
-  20% {
-    transform: translateX(30px) translateY(2px) rotate(50deg);
-  }
-  50% {
-    transform: translateX(20px) translateY(2px) rotate(50deg);
-  }
-  70% {
-    transform: translateX(5px) translateY(-2px) rotate(70deg);
-  }
-  75% {
-    transform: translateX(7px) translateY(-8px) rotate(60deg);
-  }
-  90% {
-    transform: translateX(7px) translateY(-8px) rotate(50deg);
-  }
-  99% {
-    transform: rotate(0%);
+header::after {
+  height: 200px;
+  width: 200px;
+  content: "";
+  background: url(../assets/astronaut.png);
+  -webkit-animation: float 10s linear infinite;
+  -moz-animation: float 10s linear infinite;
+  animation: float 10s linear infinite;
+}
+@-moz-keyframes float {
+  100% {
+    -moz-transform: rotate(360deg);
   }
 }
+@-webkit-keyframes float {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes float {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
